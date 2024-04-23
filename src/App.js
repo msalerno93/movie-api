@@ -5,14 +5,15 @@ import SearchBox from "./components/SearchBox";
 
 function App() {
 
-  const APIKEY="f46eb050"
+  const APIKEY="8a58b512"
 
   const [movie, setMovie] = useState([]);
   const [searchValue, setSearchValue] = useState("avengers");
 
   const getMovieReq = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=${APIKEY}`;
+    const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=${APIKEY}`;
 
+    // 'https://www.omdbapi.com?apikey='
     const response = await fetch(url);
     const responseJson = await response.json();
     if (responseJson.Search) {
