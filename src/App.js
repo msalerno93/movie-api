@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import MovieList from "./components/MovieList";
 import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
-import Button from "./components/Button";
 
 function App() {
+
+  const APIKEY="f46eb050"
+
   const [movie, setMovie] = useState([]);
   const [searchValue, setSearchValue] = useState("avengers");
 
   const getMovieReq = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=f46eb050`;
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=${APIKEY}`;
 
     const response = await fetch(url);
     const responseJson = await response.json();
